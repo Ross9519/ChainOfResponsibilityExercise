@@ -1,22 +1,13 @@
-﻿using DesignPatterns.ChainOfResponsibility.PasswordValidator.handlers;
+﻿using DesignPatterns.ChainOfResponsibility.PasswordValidator;
+using DesignPatterns.ChainOfResponsibility.PasswordValidator.handlers;
 
 var password = "ciao";
-
 var passwordHandler = ClientHandler.GetPasswordHandler();
 
 try
 {
     var info = passwordHandler.Validate(password);
-
-    if (!info.ErrorMessages.Any())
-        Console.WriteLine($"Password [{password}] is valid");
-    else
-    {
-        Console.WriteLine($"Password [{password}] is invalid");
-        Console.WriteLine();
-        Console.WriteLine("List of errors:");
-        info?.PrintErrors();
-    }
+    Utilities.PrintResult(password, info);
 }
 catch (Exception)
 {
