@@ -1,6 +1,6 @@
 ﻿using DesignPatterns.ChainOfResponsibility.PasswordValidator.handlers;
 
-var password = "CiaoPippo_29";
+var password = "ciao";
 
 var passwordHandler = ClientHandler.GetPasswordHandler();
 
